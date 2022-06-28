@@ -28,7 +28,7 @@ List<TravelModel> travelList = [
       price: '409.99',
       temp: '23 C',
       rating: '5/5',
-      image: 'assets/images/newyork.jpeg',
+      image: 'assets/images/newyork.jpg',
       distance: '471 km'),
   TravelModel(
       name: 'Madrid',
@@ -38,7 +38,7 @@ List<TravelModel> travelList = [
       price: '209.99',
       temp: '30 C',
       rating: '4/5',
-      image: 'assets/images/spain.webp',
+      image: 'assets/images/spain.jpg',
       distance: '633 km'),
   TravelModel(
       name: 'Toronto',
@@ -48,7 +48,7 @@ List<TravelModel> travelList = [
       price: '239.99',
       temp: '36 C',
       rating: '5/5',
-      image: 'assets/images/canada.webp',
+      image: 'assets/images/canada.jpg',
       distance: '1092 km'),
   TravelModel(
       name: 'Seoul',
@@ -58,6 +58,6 @@ List<TravelModel> travelList = [
       price: '219.99',
       temp: '21 C',
       rating: '3/5',
-      image: 'assets/images/korea.jpeg',
+      image: 'assets/images/korea.jpg',
       distance: '281 km'),
 ];
