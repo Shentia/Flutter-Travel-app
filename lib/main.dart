@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pr2/model/travelModel.dart';
@@ -91,7 +93,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 Positioned(
-                  top: 80,
+                  top: 100,
                   right: 0,
                   child: SizedBox(
                     width: 90,
@@ -103,12 +105,75 @@ class _MainPageState extends State<MainPage> {
                       },
                     ),
                   ),
+                ),
+                //title and Address counter
+
+                Positioned(
+                  bottom: 120,
+                  left: 50,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        travelList[_selectedIndex].name,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            CupertinoIcons.placemark,
+                            color: Colors.white,
+                          ),
+                          Text(travelList[_selectedIndex].location,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 16,
+                                  color: Colors.white)),
+                        ],
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
           ),
           Expanded(
-            child: Container(color: Colors.blueAccent, width: double.infinity),
+            child: Container(
+              // color: Colors.blueAccent,
+              width: double.infinity,
+              child: Column(children: [
+                Row(
+                  children: [
+                    Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        side: const BorderSide(
+                          color: Colors.grey,
+                          width: 1,
+                        ),
+                      ),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        child: Column(children: [
+                          Text("Distance"),
+                          Text(
+                            travelList[_selectedIndex].distance + "KM",
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ],
+                )
+              ]),
+            ),
           )
         ]),
       ),
@@ -129,8 +194,8 @@ class _MainPageState extends State<MainPage> {
               child: AnimatedContainer(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: _selectedIndex == index ? Colors.grey : Colors.white,
-                    width: 2,
+                    color: Colors.white,
+                    width: 3,
                   ),
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
